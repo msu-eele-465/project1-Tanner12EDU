@@ -1,0 +1,25 @@
+{
+  "folders": [
+    {
+      "path": "file:///c%3A/Users/tanne/workspace_ccstheia"
+    },
+    {
+      "path": ""
+    }
+  ],
+  "settings": {},
+  "launch": {
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "Lab12.1_ASM_Timer_Overflows_Compares",
+        "type": "ccs-debug",
+        "request": "launch",
+        "projectInfo": {
+          "name": "Lab12.1_ASM_Timer_Overflows_Compares",
+          "resourceId": "/Lab12.1_ASM_Timer_Overflows_Compares"
+        }
+      }
+    ]
+  }
+}
