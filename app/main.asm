@@ -100,7 +100,7 @@ init:
 					bic.b		#BIT6, &P6OUT
 
 					bic.b		#LOCKLPM5, &PM5CTL0
-                                            
+
 					bis.w		#TBCLR, &TB0CTL
 					bis.w		#TBSSEL__ACLK, &TB0CTL
 					bis.w		#MC__UP, &TB0CTL
@@ -109,7 +109,7 @@ init:
 					bis.w		#CCIE, &TB0CCTL0
 					bic.w		#CCIFG, &TB0CCTL0
 					NOP
-					bis.w 		#GIE, SR
+					bis.w 		#GIE, SR                        
 					NOP
 
 main:
@@ -118,7 +118,6 @@ main:
 					jmp 		main
 
 ISR_TB0_CCR0:
-
 					xor.b		#BIT6, &P6OUT
 					bic.w		#CCIFG, &TB0CCTL0
 					reti
@@ -145,9 +144,11 @@ L2					dec.w		R14						; Decrement R14
 ; Interrupt Vectors
 ;-------------------------------------------------------------------------------
             .sect   ".reset"                ; MSP430 RESET Vector
-            .short  RESET
+            .short  RESET	
 
-            .sect	".int43"
+			.sect	".int43"
             .short	ISR_TB0_CCR0
+
+
 
 		
