@@ -105,7 +105,7 @@ init:
 					bis.w		#TBSSEL__ACLK, &TB0CTL
 					bis.w		#MC__UP, &TB0CTL
 
-					mov.w		#37500,	&TB0CCR0
+					mov.w		#33500,	&TB0CCR0
 					bis.w		#CCIE, &TB0CCTL0
 					bic.w		#CCIFG, &TB0CCTL0
 					NOP
@@ -127,7 +127,7 @@ ISR_TB0_CCR0:
 ;------------------------------------------------------------------------------    
 DelayRoutine
 Wait        		mov.w   	#100,R15                ; Delay to R15
-L1					mov.w		#4000,R14				; 2nd delay to R14
+L1					mov.w		#3750,R14				; 2nd delay to R14
 L2					dec.w		R14						; Decrement R14
 					jnz			L2						; Inner delay
 					dec.w   	R15                     ; Decrement R15
